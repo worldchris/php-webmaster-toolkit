@@ -1,0 +1,14 @@
+# PHP Webmaster Toolkit - Sécurité et Performance de base
+
+# Désactiver l'exploration des répertoires
+Options -Indexes
+
+# Protéger les fichiers sensibles
+<FilesMatch "^\.(env|git|htaccess)">
+    Require all denied
+</FilesMatch>
+
+# Activer la compression si le module est présent
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript
+</IfModule>
